@@ -8,7 +8,7 @@ app.use(express.json())
 app.get('/health', (req, res) => {
   res.send('ok')
 })
-// todo routes
+
 
 app.use('/binance', binanceRoutes)
 

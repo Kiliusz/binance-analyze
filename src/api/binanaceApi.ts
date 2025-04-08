@@ -1,8 +1,6 @@
 import axios from 'axios'
 import config from '../config/config'
-
-
-type HistoricalDataIinterval = '1d' | '4h' | '1h' | '15m'
+import { HistoricalDataIinterval } from '../types/binanaceTypes'
 
 export const fetchHistoricalData = async (
   symbol: string,
@@ -21,7 +19,7 @@ export const fetchHistoricalData = async (
         limit,
       },
     })
-    return res
+    return res.data
   } catch (error) {
     console.error('Error while fetching data', error )
     throw error

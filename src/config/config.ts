@@ -12,5 +12,6 @@ const config: Config = {
   binanceURL: process.env.BINANCE_URL || 'https://api.binance.com',
 }
 
+// TODO validate if some values are missing (currently each env has fallback so its not necessary)
 
 export default config

@@ -7,11 +7,12 @@ export const getHistoricalData = async (
   next: NextFunction
 ) => {
   try {
-    // const {} = req.body
-    const data = await analyzeHistoricalChanges()
+    // todo implement getting user data from body or params instaed of hardcoded
+    const data = await analyzeHistoricalChanges('BTCUSDT', '1h', new Date('2024-12-22'), new Date('2024-12-23'), 24)
     console.log(data)
     res.json(data)
   } catch (error) {
     console.log('Binanace Controller Error', error)
+    next(error)
   }
 }
